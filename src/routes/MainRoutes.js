@@ -27,18 +27,18 @@ const MainRoutes = {
     children: [
         {
             path: '/',
-            element: <GratitudeDetails />
+            element: <Navigate to="/details" />
         },
         {
             path: 'color',
             element: <Color />
         },
         {
-            path: 'dashboard',
+            path: 'details',
             element: <GratitudeDetails />
         },
         {
-            path: 'major',
+            path: 'dashboard',
             element: <GratitudeDashboard />
         },
         {

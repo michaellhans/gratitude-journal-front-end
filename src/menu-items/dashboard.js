@@ -17,19 +17,19 @@ const dashboard = {
     type: 'group',
     children: [
         {
+            id: 'details',
+            title: 'Details',
+            type: 'item',
+            url: '/details',
+            icon: icons.TeamOutlined,
+            breadcrumbs: false
+        },
+        {
             id: 'dashboard',
             title: 'Dashboard',
             type: 'item',
             url: '/dashboard',
             icon: icons.DashboardOutlined,
-            breadcrumbs: false
-        },
-        {
-            id: 'major',
-            title: 'Major',
-            type: 'item',
-            url: '/major',
-            icon: icons.TeamOutlined,
             breadcrumbs: false
         },
         {
