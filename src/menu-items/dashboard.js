@@ -17,10 +17,10 @@ const dashboard = {
     type: 'group',
     children: [
         {
-            id: 'details',
-            title: 'Details',
+            id: 'journal',
+            title: 'Journal',
             type: 'item',
-            url: '/details',
+            url: '/journal',
             icon: icons.TeamOutlined,
             breadcrumbs: false
         },

@@ -7,7 +7,7 @@ import MainLayout from 'layout/MainLayout';
 
 // render - dashboard
 const Dashboard = Loadable(lazy(() => import('pages/dashboard/DashboardOverall')));
-const GratitudeDetails = Loadable(lazy(() => import('pages/gratitude/GratitudeDetails')));
+const GratitudeJournal = Loadable(lazy(() => import('pages/gratitude/GratitudeJournal')));
 const GratitudeDashboard = Loadable(lazy(() => import('pages/gratitude/GratitudeDashboard')));
 const Student = Loadable(lazy(() => import('pages/dashboard/DashboardStudent')));
 const DataView = Loadable(lazy(() => import('pages/dashboard/DataView')));
@@ -27,15 +27,15 @@ const MainRoutes = {
     children: [
         {
             path: '/',
-            element: <Navigate to="/details" />
+            element: <Navigate to="/journal" />
         },
         {
             path: 'color',
             element: <Color />
         },
         {
-            path: 'details',
-            element: <GratitudeDetails />
+            path: 'journal',
+            element: <GratitudeJournal />
         },
         {
             path: 'dashboard',

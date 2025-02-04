@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import PropTypes from 'prop-types';
 
-// chart options
-const barChartOptions = {
+const DEFAULT_CHART_OPTIONS = {
     chart: {
         type: 'bar',
         height: 365,
@@ -44,39 +43,41 @@ const barChartOptions = {
     }
 };
 
+const CHART_HEIGHT = 365;
+
 HorizontalBarChart.propTypes = {
-    data: PropTypes.array
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            key: PropTypes.string.isRequired,
+            value: PropTypes.number.isRequired
+        })
+    ).isRequired
 };
 
 function HorizontalBarChart({ data }) {
-    const [options, setOptions] = useState(barChartOptions);
+    const [options, setOptions] = useState(DEFAULT_CHART_OPTIONS);
     const [series, setSeries] = useState([{ data: [] }]);
-    const [categories, setCategories] = useState([]);
-    console.log(data);
 
     useEffect(() => {
-        const value = data.map((entry) => entry.value);
-        const keys = data.map((entry) => entry.key);
-        setSeries([{ data: value }]);
-        setCategories(keys);
-    }, [data]);
+        const values = data.map(({ value }) => value);
+        const categories = data.map(({ key }) => key);
 
-    useEffect(() => {
-        setOptions((prevState) => ({
-            ...prevState,
+        setSeries([{ data: values }]);
+        setOptions((prevOptions) => ({
+            ...prevOptions,
             xaxis: {
-                categories: categories
+                ...prevOptions.xaxis,
+                categories
             },
             tooltip: {
                 theme: 'light'
             }
         }));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [categories]);
+    }, [data]);
 
     return (
         <div id="chart">
-            <ReactApexChart options={options} series={series} type="bar" height={365} />
+            <ReactApexChart options={options} series={series} type="bar" height={CHART_HEIGHT} />
         </div>
     );
 }

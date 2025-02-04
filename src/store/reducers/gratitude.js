@@ -39,4 +39,4 @@ const gratitude = createSlice({
 
 export default gratitude.reducer;
 
-export const { startLoading, hasError, retrieveGratitudeData, retrieveKPIDashboard } = gratitude.actions;
+export const { startLoading, retrieveGratitudeData, retrieveKPIDashboard } = gratitude.actions;

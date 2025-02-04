@@ -1,5 +1,5 @@
 {
-    "name": "student-carbon-footprint-tools",
+    "name": "gratitude-journal-analytics-tools",
     "version": "1.1.1",
     "private": true,
     "dependencies": {
@@ -8,6 +8,7 @@
         "@emotion/cache": "^11.10.3",
         "@emotion/react": "^11.11.0",
         "@emotion/styled": "^11.11.0",
+        "@mui/icons-material": "^6.4.2",
         "@mui/lab": "^5.0.0-alpha.134",
         "@mui/material": "^5.13.0",
         "@mui/x-date-pickers": "^6.3.1",
