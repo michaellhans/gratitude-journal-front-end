@@ -1,11 +1,16 @@
 // assets
-import { DashboardOutlined, TableOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
+import {
+    BookOutlined, // for Journal
+    DashboardOutlined, // for Dashboard
+    UserOutlined, // for Student
+    TableOutlined // for Data View
+} from '@ant-design/icons';
 
 // icons
 const icons = {
+    BookOutlined,
     DashboardOutlined,
     TableOutlined,
-    TeamOutlined,
     UserOutlined
 };
 
@@ -21,7 +26,7 @@ const dashboard = {
             title: 'Journal',
             type: 'item',
             url: '/journal',
-            icon: icons.TeamOutlined,
+            icon: icons.BookOutlined,
             breadcrumbs: false
         },
         {
